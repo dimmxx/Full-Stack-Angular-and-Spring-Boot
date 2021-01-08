@@ -6,6 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RepositoryRestResource(path = "product-categories")
+@RepositoryRestResource(path = "product-categories", collectionResourceRel = "productCategory")
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {
 }
