@@ -17,13 +17,11 @@ export class ProductListComponent implements OnInit {
     this.listProducts();
   }
 
-  // tslint:disable-next-line:typedef
-  listProducts() {
+  listProducts(): void {
     this.productService.getProductList().subscribe(
         (data: Product[]) => {
         this.products = data;
       }
     );
   }
-
 }
