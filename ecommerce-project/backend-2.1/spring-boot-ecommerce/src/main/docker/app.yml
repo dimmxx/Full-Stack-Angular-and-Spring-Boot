@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  ecommerce:
+    image: dimmxx/fullstack-springboot-angular-ecommerce:latest
+    ports:
+      - 8080:8080
+  ecommerce-mysql:
+    extends:
+      file: mysql.yml
+      service: ecommerce-mysql
