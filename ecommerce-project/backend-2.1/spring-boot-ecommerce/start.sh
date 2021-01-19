@@ -1,3 +1,6 @@
-./mvnw compile jib:build \
+#!/bin/bash
+./mvnw verify -Dmaven.test.skip=true jib:build \
 && docker-compose -f src/main/docker/app.yml up
 docker ps --format "table {{.ID}}\t {{.Names}}\t {{.Status}}\t {{.Ports}}"
+#
+# ./mvnw compile jib:build \
