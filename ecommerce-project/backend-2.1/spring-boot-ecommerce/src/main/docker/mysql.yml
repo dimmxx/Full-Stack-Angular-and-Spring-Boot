@@ -1,11 +1,13 @@
 version: '3.4'
-
 services:
   ecommerce-mysql:
-    image: mysql:latest
-    container_name: ecommerce-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: remote
-      MYSQL_DATABASE: full-stack-ecommerce
-    ports:
-      - "3308:3306"
+      image: mysql:latest
+      container_name: ecommerce-mysql
+      environment:
+          - MYSQL_USER=root
+          - MYSQL_ROOT_PASSWORD=remote
+          - MYSQL_DATABASE=full-stack-ecommerce
+      ports:
+          - 3308:3306
+      security_opt:
+          - seccomp:unconfined #fixing 'mbind operation not permitted' warning

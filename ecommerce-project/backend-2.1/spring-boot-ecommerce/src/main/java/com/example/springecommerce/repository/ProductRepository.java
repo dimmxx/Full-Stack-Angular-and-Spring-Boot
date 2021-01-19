@@ -16,4 +16,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     Page<Product> findAllByProductCategoryId(@RequestParam("id") Long id, Pageable pageable);
     // Spring Data Rest makes it available at: http://localhost:8080/api/products/search/findAllByProductCategoryId?id=4&size=1&page=0
+
+    Page<Product> findByNameContaining(@RequestParam("name") String name,  Pageable pageable);
+    // Spring Data Rest makes it available at: http://localhost:8080/api/products/search/findByNameContaining?name=python
 }
