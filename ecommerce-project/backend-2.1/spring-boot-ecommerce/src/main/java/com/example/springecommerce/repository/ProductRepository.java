@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Repository
-@RepositoryRestResource(path = "products", collectionResourceRel = "products")
+@RepositoryRestResource(path = "products", collectionResourceRel = "products") // Spring Data Rest makes it available at: http://localhost:8080/api/products?page=0&size=1
 @CrossOrigin("http://localhost:4200")
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
