@@ -9,7 +9,7 @@
           <div class="product-box">
 
             <a routerLink="/products/{{ tempProduct.id }}">
-              <img src="{{ tempProduct.imageUrl }}" class="img-responsive">
+              <img class="img-responsive" src="{{ tempProduct.imageUrl }}">
             </a>
 
             <a routerLink="/products/{{ tempProduct.id }}">
@@ -17,7 +17,7 @@
             </a>
 
             <div class="price">{{ tempProduct.unitPrice | currency:'USD' }}</div>
-            <a href="#" class="primary-btn">Add to cart</a>
+            <a class="primary-btn" href="#">Add to cart</a>
           </div>
 
         </div>
@@ -38,10 +38,10 @@
             <div class="row">
               <div class="col-md-9" style="padding-left: 30%">
 
-                <ngb-pagination [(page)]="thePageNumber"
-                                [pageSize]="thePageSize"
+                <ngb-pagination (pageChange)="listProducts()"
+                                [(page)]="thePageNumber"
                                 [collectionSize]="theTotalElements"
-                                (pageChange)="listProducts()">
+                                [pageSize]="thePageSize">
 
                 </ngb-pagination>
 
@@ -50,6 +50,7 @@
               <div class="col-md-3 mt-2" style="text-align: right">
                 <span class="mr-2">Page Size</span>
                 <select>
+                  <!--                <select (change)="updatePageSize($event.target.value)" )>-->
                   <option selected="true">5</option>
                   <option>10</option>
                   <option>20</option>
