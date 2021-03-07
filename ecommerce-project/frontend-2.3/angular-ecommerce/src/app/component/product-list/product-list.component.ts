@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GetResponseProduct, ProductService} from '../../services/product.service';
 import {Product} from '../../common/product';
 import {ActivatedRoute} from '@angular/router';
@@ -19,7 +19,10 @@ export class ProductListComponent implements OnInit {
   thePageSize = 5;
   theTotalElements = 0;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute ) { }
+  previousKeyword!: string;
+
+  constructor(private productService: ProductService, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(() => {
@@ -29,7 +32,7 @@ export class ProductListComponent implements OnInit {
 
   listProducts(): void {
     this.searchMode = this.route.snapshot.paramMap.has('keyword');
-    if (this.searchMode){
+    if (this.searchMode) {
       this.handleSearchProducts();
     } else {
       this.handleListProducts();
@@ -39,11 +42,16 @@ export class ProductListComponent implements OnInit {
   handleSearchProducts(): void {
     // @ts-ignore
     const theKeyword: string = this.route.snapshot.paramMap.get('keyword');
-    this.productService.searchProducts(theKeyword).subscribe(
-      (data: Product[]) => {
-        this.products = data;
-      }
-    );
+
+    // tslint:disable-next-line:triple-equals
+    if (this.previousKeyword != theKeyword) {
+      this.thePageNumber = 1;
+    }
+    this.previousKeyword = theKeyword;
+    console.log(`keyword=${theKeyword}, thPageNumber=${this.thePageNumber}`);
+    this.productService.searchProductsPaginate(this.thePageNumber - 1,
+                                                       this.thePageSize,
+                                                       theKeyword).subscribe(this.processResult());
   }
 
   handleListProducts(): void {
@@ -51,8 +59,7 @@ export class ProductListComponent implements OnInit {
     if (hasCategoryId) {
       // @ts-ignore
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
-    }
-    else {
+    } else {
       this.currentCategoryId = 1;
     }
     //
@@ -61,7 +68,7 @@ export class ProductListComponent implements OnInit {
     //
     // if we have a different category id than previous
     // then set thePageNumber back to 1
-    if (this.currentCategoryId !== this.previousCategoryId){
+    if (this.currentCategoryId !== this.previousCategoryId) {
       this.thePageNumber = 1;
     }
 
@@ -69,9 +76,10 @@ export class ProductListComponent implements OnInit {
     console.log(`currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`);
 
     this.productService.getProductListPaginate(this.thePageNumber - 1,
-                                                      this.thePageSize,
-                                                      this.currentCategoryId).subscribe(this.processResult());
+      this.thePageSize,
+      this.currentCategoryId).subscribe(this.processResult());
   }
+
   // tslint:disable-next-line:typedef
   processResult() {
     return (data: GetResponseProduct) => {
@@ -86,5 +94,9 @@ export class ProductListComponent implements OnInit {
     this.thePageSize = +value;
     this.thePageNumber = 1;
     this.listProducts();
+  }
+
+  addToCart(tempProduct: Product): void {
+    console.log(`Adding to cart: ${tempProduct.name}, ${tempProduct.unitPrice}`);
   }
 }
