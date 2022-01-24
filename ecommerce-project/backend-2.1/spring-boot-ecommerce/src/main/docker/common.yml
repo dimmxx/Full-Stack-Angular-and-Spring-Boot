@@ -1,0 +1,23 @@
+version: '2.4'
+services:
+
+  ecommerce-mysql:
+    image: mysql:latest
+    container_name: ecommerce-mysql
+    environment:
+        - MYSQL_USER=root
+        - MYSQL_ROOT_PASSWORD=remote
+        - MYSQL_DATABASE=full-stack-ecommerce
+    ports:
+        - 3308:3306
+    security_opt:
+        - seccomp:unconfined #fixing 'mbind operation not permitted' warning
+
+  ecommerce:
+    image: dimmxx/fullstack-springboot-angular-ecommerce:latest
+    container_name: ecommerce-backend
+    ports:
+      - 8090:8090
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://ecommerce-mysql:3306/full-stack-ecommerce?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+
