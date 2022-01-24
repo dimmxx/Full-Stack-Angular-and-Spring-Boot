@@ -1,14 +1,14 @@
-version: '3.4'
+version: '2.4'
 services:
   ecommerce-mysql:
-    extends:
-      file: mysql.yml
-      service: ecommerce-mysql
+      extends:
+        file: mysql.yml
+        service: ecommerce-mysql
   ecommerce:
       image: dimmxx/fullstack-springboot-angular-ecommerce:latest
       container_name: ecommerce-backend
       ports:
-          - 8080:8080
+          - 8090:8090
       environment:
           - SPRING_DATASOURCE_URL=jdbc:mysql://ecommerce-mysql:3306/full-stack-ecommerce?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
 
