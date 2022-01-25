@@ -4,7 +4,7 @@ services:
       image: mysql:latest
       container_name: ecommerce-mysql
       environment:
-          - MYSQL_USER=root
+          - MYSQL_USER=ecommerce
           - MYSQL_ROOT_PASSWORD=remote
           - MYSQL_DATABASE=full-stack-ecommerce
       ports:

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0d46fdf0-6eff-4000-b865-3e543b90d62d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1shkTauQX2AzA0wcnJRcJN9CYZv" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0d46fdf0-6eff-4000-b865-3e543b90d62d" name="Default Changelist" comment="" />
+      <created>1621332218270</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621332218270</updated>
+      <workItem from="1621332220084" duration="11000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/TypeScript/03-classes/04-modules/Main.js" />
+        <option value="$PROJECT_DIR$/TypeScript/03-classes/04-modules/Customer.js" />
+        <option value="$PROJECT_DIR$/TypeScript/03-classes/01-class-definition/Customer.js" />
+        <option value="$PROJECT_DIR$/TypeScript/03-classes/02-access-modifiers/Customer.js" />
+        <option value="$PROJECT_DIR$/TypeScript/03-classes/03-parameter-properties/Customer.js" />
+        <option value="$PROJECT_DIR$/TypeScript/06-interfaces/GolfCoach.js" />
+        <option value="$PROJECT_DIR$/TypeScript/06-interfaces/CricketCoach.js" />
+        <option value="$PROJECT_DIR$/TypeScript/06-interfaces/Driver.js" />
+        <option value="$PROJECT_DIR$/TypeScript/06-interfaces/Coach.js" />
+        <option value="$PROJECT_DIR$/TypeScript/04-inheritance/Rectangle.js" />
+        <option value="$PROJECT_DIR$/TypeScript/04-inheritance/Circle.js" />
+        <option value="$PROJECT_DIR$/TypeScript/04-inheritance/Driver.js" />
+        <option value="$PROJECT_DIR$/TypeScript/04-inheritance/Shape.js" />
+        <option value="$PROJECT_DIR$/TypeScript/02-loops-and-arrays/loops.js" />
+        <option value="$PROJECT_DIR$/TypeScript/02-loops-and-arrays/sports.js" />
+        <option value="$PROJECT_DIR$/TypeScript/02-loops-and-arrays/growable-arrays.js" />
+        <option value="$PROJECT_DIR$/TypeScript/05-abstract-classes/Rectangle.js" />
+        <option value="$PROJECT_DIR$/TypeScript/05-abstract-classes/Circle.js" />
+        <option value="$PROJECT_DIR$/TypeScript/05-abstract-classes/Driver.js" />
+        <option value="$PROJECT_DIR$/TypeScript/05-abstract-classes/Shape.js" />
+      </list>
+    </option>
+  </component>
+</project>
